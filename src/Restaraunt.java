@@ -8,8 +8,8 @@ import java.util.List;
  */
 public class Restaraunt {
     private static final Logger logger = Logger.getLogger(Restaraunt.class);
-    String name;
-    static List<Cashier> cashiers;
+   private String name;
+   private static List<Cashier> cashiers;
 
     public Restaraunt(String name) {
         this.name = name;

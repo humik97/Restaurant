@@ -26,12 +26,12 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class Cashier extends Thread {
     private static final Logger logger = Logger.getLogger(Cashier.class);
-    public Deque<Visitor> visitors;
-    int length;
-    int cashnumber;
-    int servicetime;
-    Condition cond;
-    Lock l;
+    private Deque<Visitor> visitors;
+    private int length;
+    private int cashnumber;
+    private int servicetime;
+    private Condition cond;
+    private Lock l;
 
 
     public Cashier(int cashnumber, int servicetime, int length) {
@@ -48,7 +48,7 @@ public class Cashier extends Thread {
     public void serviceClient(Visitor visitor) {
         visitor = visitors.poll();
         try {
-            Thread.sleep(servicetime * visitor.orders);
+            Thread.sleep(servicetime * visitor.getOrders());
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -120,5 +120,32 @@ public class Cashier extends Thread {
                 serviceClient(visitors.getFirst());
             }
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Cashier cashier = (Cashier) o;
+
+        if (length != cashier.length) return false;
+        if (cashnumber != cashier.cashnumber) return false;
+        if (servicetime != cashier.servicetime) return false;
+        if (visitors != null ? !visitors.equals(cashier.visitors) : cashier.visitors != null) return false;
+        if (cond != null ? !cond.equals(cashier.cond) : cashier.cond != null) return false;
+        return l != null ? l.equals(cashier.l) : cashier.l == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = visitors != null ? visitors.hashCode() : 0;
+        result = 31 * result + length;
+        result = 31 * result + cashnumber;
+        result = 31 * result + servicetime;
+        result = 31 * result + (cond != null ? cond.hashCode() : 0);
+        result = 31 * result + (l != null ? l.hashCode() : 0);
+        return result;
     }
 }

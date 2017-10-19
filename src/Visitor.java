@@ -8,10 +8,10 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class Visitor  {
     private static Logger logger = Logger.getLogger(Visitor.class);
-    Lock l ;
-    String name;
-    int cashnumb;
-    int orders;
+   private Lock l ;
+   private String name;
+   private int cashnumb;
+   private int orders;
 
     public Visitor(String name, int orders, int cashnumb) {
         l=new ReentrantLock();
@@ -29,7 +29,7 @@ public class Visitor  {
                     logger.info(this.getName()+"blocked");
                     cashier1.addVisitor(cashier.getVisitors().getLast());
                     cashier.removeVisitor(cashier.getVisitors().getLast());
-                    logger.info(cashier.getVisitors().getLast().getName()+"перешел с кассы # "+cashier.cashnumber+" на кассу # "+cashier1.cashnumber);
+                    logger.info(cashier.getVisitors().getLast().getName()+"перешел с кассы # "+cashier.getCashnumber()+" на кассу # "+cashier1.getCashnumber());
                     logger.info(this.getName()+"unblocked");
                 }
             }
@@ -61,5 +61,28 @@ public class Visitor  {
 
     public void setCashnumb(int cashnumb) {
         this.cashnumb = cashnumb;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Visitor visitor = (Visitor) o;
+
+        if (cashnumb != visitor.cashnumb) return false;
+        if (orders != visitor.orders) return false;
+        if (l != null ? !l.equals(visitor.l) : visitor.l != null) return false;
+        return name != null ? name.equals(visitor.name) : visitor.name == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = l != null ? l.hashCode() : 0;
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + cashnumb;
+        result = 31 * result + orders;
+        return result;
     }
 }
