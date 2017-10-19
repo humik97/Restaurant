@@ -1,0 +1,28 @@
+2017-10-19 14:45:43 INFO  Restaraunt:17 - Burger King
+2017-10-19 14:45:43 INFO  Cashier:38 - касса # 1
+2017-10-19 14:45:43 INFO  Cashier:64 - visitior 1-1 выбрал кассу # 1
+2017-10-19 14:45:43 INFO  Cashier:64 - visitior 1-2 выбрал кассу # 1
+2017-10-19 14:45:43 INFO  Cashier:64 - visitior 1-3 выбрал кассу # 1
+2017-10-19 14:45:43 INFO  Cashier:64 - visitior 1-4 выбрал кассу # 1
+2017-10-19 14:45:43 INFO  Cashier:64 - visitior 1-5 выбрал кассу # 1
+2017-10-19 14:45:43 INFO  Cashier:38 - касса # 2
+2017-10-19 14:45:43 INFO  Cashier:64 - visitior 2-1 выбрал кассу # 2
+2017-10-19 14:45:43 INFO  Cashier:64 - visitior 2-2 выбрал кассу # 2
+2017-10-19 14:45:43 INFO  Cashier:64 - visitior 2-3 выбрал кассу # 2
+2017-10-19 14:45:43 INFO  Cashier:64 - visitior 2-4 выбрал кассу # 2
+2017-10-19 14:45:43 INFO  Cashier:64 - visitior 2-5 выбрал кассу # 2
+2017-10-19 14:45:43 INFO  Cashier:64 - visitior 2-6 выбрал кассу # 2
+2017-10-19 14:45:43 INFO  Cashier:55 - visitior 2-1 обслужила касса 2
+2017-10-19 14:45:43 INFO  Cashier:55 - visitior 2-2 обслужила касса 2
+2017-10-19 14:45:43 INFO  Cashier:55 - visitior 1-1 обслужила касса 1
+2017-10-19 14:45:43 INFO  Cashier:55 - visitior 2-3 обслужила касса 2
+2017-10-19 14:45:43 INFO  Cashier:55 - visitior 2-4 обслужила касса 2
+2017-10-19 14:45:43 INFO  Cashier:55 - visitior 1-2 обслужила касса 1
+2017-10-19 14:45:43 INFO  Visitor:36 - visitior 1-5blocked
+2017-10-19 14:45:43 INFO  Visitor:38 - visitior 1-5перешел с кассы # 1 на кассу # 2
+2017-10-19 14:45:43 INFO  Visitor:40 - visitior 1-5unblocked
+2017-10-19 14:45:43 INFO  Cashier:55 - visitior 2-5 обслужила касса 2
+2017-10-19 14:45:43 INFO  Cashier:55 - visitior 2-6 обслужила касса 2
+2017-10-19 14:45:43 INFO  Cashier:55 - visitior 1-3 обслужила касса 1
+2017-10-19 14:45:43 INFO  Cashier:55 - visitior 1-4 обслужила касса 1
+2017-10-19 14:45:43 INFO  Cashier:55 - visitior 1-5 обслужила касса 2
